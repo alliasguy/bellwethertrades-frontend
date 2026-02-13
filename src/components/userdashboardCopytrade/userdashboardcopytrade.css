@@ -1,0 +1,13 @@
+.profit{
+    color: green !important;
+    text-transform: capitalize ;
+    font-weight: bolder;
+}
+.loss{
+    color: red !important;
+    text-transform: capitalize ;
+    font-weight: bolder;
+}
+.tr{
+    gap: 10px;
+}

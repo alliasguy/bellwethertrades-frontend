@@ -1,0 +1,46 @@
+.trans-page{
+    position: relative;
+    border-radius: 20px;
+}
+.trans-page-float{
+    top: 10px ;
+}
+.empty-page{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 30px;
+}
+.empty-img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+.empty-page a{
+    padding: 15px 70px;
+    background-color: rgb(12, 12, 88);
+    color: white;
+    margin: 25px 0px;
+    text-transform: capitalize;
+    width: 60%;
+}
+.transaction-container{
+    width: 100%;
+}
+.transaction-container table{
+    overflow-x: scroll;
+    width: 100%;
+}
+@media screen and (max-width: 990px) {
+    .no-ref{
+        width: 100%;
+    }
+    .empty-page{
+        width: 100%;
+    }
+}

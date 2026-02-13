@@ -1,0 +1,12 @@
+.news-widget-container{
+    height: 500px;
+    width: 100%;
+}
+.news-widget-wrapper{
+    width: 100%;
+    padding: 40px 0px;
+}
+.news-tesla-widget{
+    padding: 0px ;
+    width: 95%;
+}

@@ -1,0 +1,91 @@
+.forex-page-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column ;
+    background-color: var(--primary-color);
+}
+.forex-page-wrapper{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+.forex-hero-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px;
+}
+.forex-page-video{
+    width:100% ;
+    height: 100%;
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+}
+.floating-widget-right{
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    top: -20px;
+    left: -20px;
+}
+.floating-widget-left{
+    position: absolute;
+    background-color: var(--primary-color);
+    border: 1px solid hsl(0, 0%, 26%);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: -20px;
+    right: -20px;
+}
+.forex-text-section{
+    padding-top: 40px;
+    align-self: center;
+}
+
+.forex-copy-trade-section{
+    width: 100%;
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 990px){
+    .forex-img-container {
+            width: 100%;
+    }
+
+    .forex-img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+@media screen and (max-width: 767px) {
+    .forex-page-video{
+        display: none;
+    }
+    .floating-widget-left{
+        position: static;
+        width: 95%;
+        overflow: hidden;
+    }
+    .floating-widget-right{
+        position: static;
+        width: 95%;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+    .forex-hero-section{
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+    }
+    .forex-page-wrapper {
+        width: 100%;
+    }
+}

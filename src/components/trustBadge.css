@@ -1,0 +1,31 @@
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.trust-icon {
+    color: var(--emerald-400);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.trust-text {
+    color: var(--slate-300);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}

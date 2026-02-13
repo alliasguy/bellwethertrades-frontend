@@ -1,0 +1,218 @@
+.profile-page{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 247, 255);
+    width: 100%;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.profile-form-conatainer{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:  0px 0px 2px #ddd;
+    margin-bottom: 50px;
+    padding: 40px 50px;
+}
+.profile-form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+.upper-chamber , .lower-chamber{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    height: 200px;
+    padding: 20px;
+}
+.profile-picture-upload-container{
+    width: 40%;
+    position: relative;
+}
+.first-input-container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.lower-chamber{
+    flex-wrap: wrap;
+}
+.lower-chamber input{
+    width: 48%;
+    height: 45px;
+    border-radius: 5px;
+    border: 1.5px solid #ddd;
+    padding: 5px 10px;
+}
+.lower-chamber input:focus{
+    outline: 1.5px solid rgba(0, 0, 255, 0.575);
+}
+.profile-input-container{
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.profile-input-container input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: 1.5px solid #ddd;
+    margin: 10px 0px;
+    padding: 5px 10px;
+
+}
+.profile-input-container input:focus{
+    outline: 1.5px solid rgba(110, 144, 255, 0.575);
+}
+.profile-circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(202, 202, 202);
+    box-shadow: 0px 0px 5px rgb(176, 176, 176);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(128, 128, 128);
+    position: relative;
+    overflow: hidden;
+}
+.profile-circle svg{
+    font-size: 4rem;
+    color: white;
+}
+.upload-input{
+    display: none;
+}
+.upload-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    cursor: pointer;
+    position: absolute;
+    right: 130px;
+    bottom: 0px;
+}
+.label{
+    width: 100%;
+    text-align: left;
+    font-size: .9rem;
+    color: rgb(95, 95, 95);
+    margin-right: auto;
+    text-transform: capitalize;
+}
+.update-profile-btn{
+    padding: 10px 50px;
+    background-color: #4f29f0;
+    color: white;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.profile-circle-img{
+    min-width: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover;
+
+}
+@media (max-width: 990px) and (min-width: 768px){
+    .profile-form-conatainer{
+        width: 100%;
+        padding: 0px;
+    }
+    .upload-icon{
+        left: 0px;
+    }
+    
+}
+@media screen and (max-width: 767px){
+    .profile-picture-upload-container{
+        position: relative;
+        width: 60%;
+        align-self: center;
+    }
+    .upload-icon{
+        left: 0px;
+    }
+    .profile-form-conatainer{
+        padding: 0px;
+    }
+    .profile-form-conatainer{
+        width: 100%;
+        margin: 40px 0;
+        height: auto ;
+    }
+    .profile-page{
+        width: 100%;
+    }
+    .profile-form{
+        width: 100%;
+        height: auto;
+    }
+    .profile-picture-upload-container{
+        align-self: flex-start;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .update-profile-btn{
+        margin-top: 70px;
+        width: 91%;
+    }
+    .upper-chamber{
+        height: 600px;
+    }
+    .profile-circle{
+        align-self: center;
+    }
+    .first-input-container{
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;  
+    }
+
+    .profile-input-container{
+        width: 100%;
+        height: auto;
+    }
+    .lower-chamber{
+        width: 100%;
+        height: 300px;
+        position: static;
+    }
+    .profile-page{
+        height: auto;
+    }
+    .profile-form-conatainer{
+        height: auto;
+    }
+    .upper-chamber{
+        flex-direction: column;
+        width: 100%;
+        
+    }
+}

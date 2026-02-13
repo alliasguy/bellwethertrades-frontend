@@ -1,0 +1,186 @@
+.userdashboard-live-chart-container{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 30px 0px;
+    height: 600px;
+}
+.locked-section{
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.locked-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.locked-btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* From Uiverse.io by Yaya12085 */
+.locked-button {
+    width: 50%;
+    display: flex;
+    padding: 1.2em 1rem;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    background-size: 300%;
+    color: #fff;
+    border: none;
+    background-position: left center;
+    box-shadow: 0 30px 10px -20px rgba(0, 0, 0, .2);
+    transition: background .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locked-button:hover {
+    background-size: 320%;
+    background-position: right center;
+}
+
+.locked-button:hover svg {
+    fill: #fff;
+}
+
+.locked-button svg {
+    font-size: 1.5rem;
+    fill: #f09f33;
+    transition: .3s ease;
+}
+.locked-text-container{
+    margin: 40px 0px 20px 0px;
+    text-transform: capitalize;
+}
+.locked-message-modal-container{
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.346);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+.locked-message-modal{
+    width: 50%;
+    height: 80%;
+    background-color: white;
+
+}
+/* From Uiverse.io by Yaya12085 */
+.locked-modal {
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    text-align: left;
+    border-radius: 0.5rem;
+    max-width: 290px;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.locked-modal-header {
+    padding: 1.25rem 1rem 1rem 1rem;
+    background-color: #ffffff;
+}
+
+.locked-modal-image {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fee2e2;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+}
+
+.locked-modal-image svg {
+    color: #dc2626;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.locked-modal-content {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.locked-modal-title {
+    color: #111827;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.locked-modal-message {
+    margin-top: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.locked-modal-actions {
+    margin: 0.75rem 1rem;
+    background-color: #f9fafb;
+}
+
+.desactivate {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-color: transparent;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.locked-modal-cancel {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+}
+@media screen and (max-width: 990px) {
+    .locked-message-modal-container{
+        width: 100%;
+    }
+    .locked-section{
+        width: 100%;
+        padding: 10px;
+        min-height: 100vh;
+    }
+}

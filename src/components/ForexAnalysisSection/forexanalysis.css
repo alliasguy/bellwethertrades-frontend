@@ -1,0 +1,65 @@
+.trading-view-forex-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #000000;
+    flex-direction: column;
+}
+
+.trading-view-forex-wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trading-view-card {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 650px;
+    height: 650px;
+    border: 1px solid rgba(167, 207, 223, 0.3);
+    border-radius: 20px;
+    padding: 20px 10px;
+}
+
+.trading-view-card-text-container {
+    text-align: left;
+    height: 25%;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.trading-view-card-text-container h1 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.trading-view-card-text-container p {
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+@media (max-width: 990px) {
+    .trading-view-forex-wrapper {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .trading-view-card {
+        width: 100%;
+        margin: 20px 0px;
+        height: 700px;
+    }
+
+    .trading-view-card-text-container {
+        padding-bottom: 20px;
+    }
+
+}

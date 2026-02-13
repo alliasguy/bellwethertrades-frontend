@@ -1,0 +1,211 @@
+.mt5-section {
+    width: 100%;
+    padding: 40px 0 100px;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Shine Effect */
+.mt5-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.mt5-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mt5-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.mt5-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 2;
+}
+
+.platform-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(35, 83, 138, 0.2);
+    color: #A7CFDF;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+    border: 1px solid rgba(35, 83, 138, 0.3);
+}
+
+.mt5-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mt5-content p {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    /* Dimmer Gray (Slate 400) */
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #d1d5db;
+    /* Light Gray */
+    font-weight: 500;
+}
+
+.feature-dot {
+    width: 8px;
+    height: 8px;
+    background: #23538A;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #23538A;
+}
+
+.primary-btn {
+    padding: 16px 32px;
+    background: #23538A;
+    white-space: nowrap;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(35, 83, 138, 0.4);
+    background: #2c66aa;
+}
+
+.mt5-visuals {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.platform-mockup {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    transition: transform 0.5s ease;
+}
+
+.platform-mockup:hover {
+    transform: scale(1.02);
+}
+
+.floating-badge {
+    position: absolute;
+    padding: 12px 20px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.badge-1 {
+    top: 10%;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: 20%;
+    right: -20px;
+    animation-delay: 2s;
+}
+
+@media (max-width: 990px) {
+    .mt5-section {
+        padding: 80px 0;
+    }
+
+    .mt5-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .mt5-content {
+        align-items: center;
+    }
+
+    .feature-list {
+        align-items: center;
+    }
+
+    .mt5-content p {
+        margin: 0 auto;
+    }
+
+    .platform-mockup {
+        width: 90%;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+}

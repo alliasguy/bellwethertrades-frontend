@@ -1,0 +1,443 @@
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 4;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+    transition: all .5s ease-in-out;
+    height: 60px;
+}
+
+.scroll-color {
+    background-color: var(--secondary-mild);
+    position: fixed;
+    top: 0px;
+}
+
+nav {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+nav ul {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.line {
+    height: 1.5px;
+    width: 0px;
+    transition: all .3s ease;
+    background-color: var(--primary-color);
+}
+
+nav ul li:hover .line {
+    width: 100%;
+}
+
+nav ul li a {
+    color: white;
+    text-transform: capitalize;
+    font-size: .9rem;
+}
+
+.drop-down-container{
+    position: absolute;
+    top:0px;
+    background-color: transparent;
+    overflow: hidden;
+    padding-top: 45px;
+    cursor: pointer;
+    left: 0px;
+}
+.drop-wrapper{
+    background-color: black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--mild-color);
+    width: 150px;
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 5px;
+}
+.dropdown-link{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: .8rem;
+    text-transform: capitalize;
+}
+.dropdown-link:hover{
+    background-color: rgb(37, 37, 37);
+}
+.signup-btn {
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border: 2px solid var(--mild-color);
+    color: var(--mild-color);
+    text-transform: capitalize;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    font-weight: 500;
+    margin-top: 0px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    overflow: hidden;
+    padding-left: 10px;
+    height: 100%;
+}
+
+.logo {
+    object-fit: contain;
+    cursor: pointer;
+    width: 100%;
+    align-self: center;
+}
+
+.txtlogo {
+    height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mobile-menu-container {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 40px;
+    cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(175, 175, 175);
+    margin: 3px 0px;
+}
+
+.mobile-menu-container {
+    display: none;
+}
+
+.menu-card {
+    display: none;
+}
+
+.sign-up-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .market-links,.analytics-links,.company-links,.trading-links {
+            width: 80%;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--primary-color);
+            height: 0px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+    
+    .market-dropdown p {
+        color: var(--mild-color);
+        text-transform: capitalize;
+        width: 100%;
+        text-align: left;
+        padding: 15px 10px;
+        font-family: "Poppins" !important;
+    }
+
+    .market-dropdown {
+        display: flex;
+        align-items: center;
+        color: #7e8590;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+        font-family: "Poppins";
+    }
+    .market-dropdown:hover p{
+        background-color: rgb(37, 37, 37);
+        color: #ffffff;
+        transform: translate(1px, -1px);
+    }
+
+    .market-dropdown:hover a {
+        color: white;
+    }
+    .market-dropdown-svg-container{
+        position: absolute;
+        top: 10px;
+        right: 0;
+        font-size: 2rem;
+        color: rgb(97, 97, 97);
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .show-markets{
+        height: 230px;
+        transition: .2s all ease-in;
+    }
+    .show-markets .market-dropdown-svg-container svg{
+        transform: rotate(180deg);
+        transition: .2s all ease;
+    }
+    .overlay-close-btn-container{
+        height: 60px;
+        width: 60px;
+        border-radius: 10px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: black;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7e8590;
+        font-size: 2rem;
+    }
+    .logo-container {
+        width: 30%;
+        padding-left: 40px;
+    }
+
+    .menu-container {
+        display: flex;
+        position: sticky;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .sign-up-btn-container {
+        display: none;
+
+    }
+    .mobile-menu-container{
+        display: flex;
+    }
+    .overlay {
+        display: block;
+        width: 0%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        transition: .2s all ease-in;
+        left: 0;
+    }
+    .showing-modal {
+        width: 100vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .showing-modal ul li a {
+        font-family: poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .menu-modal ul {
+        width: 80%;
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-top: 20px;
+    }
+
+    .menu-modal ul a {
+        font-size: 1rem;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
+        margin: 5px 0px;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .sign-up-btn-container {
+        display: none;
+    }
+
+    .mobile-menu-container {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .logo-container {
+        width: 90%;
+        overflow: hidden;
+        margin-left: -300px;
+        overflow: hidden;
+    }
+
+    .logo {
+        margin-top: 5px;
+        object-fit: contain;
+        height: 100%;
+    }
+
+    header {
+        height: 80px;
+    }
+    .menu-card-image-conatiner .mobile-logo{
+        height: 80px;
+        object-fit: cover;
+        width: 100%;
+        margin-left:-30px;
+        
+    }
+    .menu-card-image-conatiner{
+        width: 100%;
+        padding: 10px 0px;
+        align-self: flex-end;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: black;
+    }
+    .menu-card {
+        width: 80%;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        background-color: var(--primary-color);
+        overflow-x: hidden;
+        position: sticky;
+        overflow-y: scroll;
+        height: 100%;
+    }
+
+    .menu-card .separator {
+        border-top: 1.5px solid #42434a;
+    }
+
+    .menu-card .list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 10px;
+    }
+    .element a{
+        color: rgb(214, 214, 214);
+        text-transform: capitalize;
+        width: 100%;
+        text-align: left;
+    }
+    .menu-card .list .element {
+        display: flex;
+        align-items: center;
+        color: #7e8590;
+        transition: all 0.3s ease-out;
+        padding: 15px 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .menu-card .list .element svg {
+        width: 19px;
+        height: 19px;
+        transition: all 0.3s ease-out;
+    }
+
+    .menu-card .list .element .label {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .menu-card .list .element:hover {
+        background-color: rgb(37, 37, 37);
+        color: #ffffff;
+        transform: translate(1px, -1px);
+    }
+
+    .menu-card .list .element:hover a {
+        color: white;
+    }
+
+    .menu-card .list .delete:hover {
+        background-color: var(--dark);
+    }
+
+    .menu-card .list .element:active {
+        transform: scale(0.99);
+    }
+
+    .menu-card .list:not(:last-child) .element:hover svg {
+        stroke: #ffffff;
+    }
+
+    .menu-card .list:last-child .element {
+        color: #7e8590;
+    }
+}
+
+@media screen and (max-width: 767px) {
+        .logo {
+            object-fit: contain;
+            cursor: pointer;
+            width: 100%;
+            align-self: flex-start;
+        }
+        .logo-container {
+            margin-left: -90px;
+        }
+    
+}

@@ -1,0 +1,117 @@
+.review-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    flex-direction: column;
+}
+
+.review-card-container {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.review-card {
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid hsl(0, 0%, 18%);
+}
+
+.review-card-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+.review-card-img-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.review-card-rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.rate-icon-container {
+    width: 100%;
+    align-self: flex-start;
+}
+
+.rate-icon-container svg {
+    color: goldenrod;
+}
+
+.investor-name {
+    text-transform: capitalize;
+    font-family: "lato";
+    font-size: .9rem;
+    color: var(--mild-color);
+}
+
+.investor-review-container p {
+    font-family: "poppins";
+    font-size: .9rem;
+}
+
+.investor-review-container {
+    color: var(--mild-color);
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.right-quote {
+    align-self: flex-start;
+    font-size: 2.1rem;
+    color: rgba(93, 93, 93, 0.741);
+}
+
+.left-quote {
+    font-size: 2.1rem;
+    color: rgba(93, 93, 93, 0.741);
+    align-self: flex-end;
+}
+
+@media (max-width: 990px) and (min-width: 768px) {
+    .review-card-container {
+        flex-wrap: wrap;
+    }
+
+    .review-card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .swiper-slide-content p {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .review-card-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .review-card {
+        width: 100%;
+        margin: 20px 0px;
+    }
+}

@@ -1,0 +1,263 @@
+.plan-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+  flex-direction: column;
+  background-color: #000000;
+  position: relative;
+}
+
+.plan-card-container {
+  width: 90%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.pack-container {
+  position: relative;
+  display: flex;
+  min-width: 25%;
+  flex-direction: column;
+  padding: 1.6rem;
+  color: #fff;
+  border: 1px solid rgba(167, 207, 223, 0.3);
+}
+
+.pack-container:hover {
+  border: 1px solid #A7CFDF;
+  transition: all .1s ease-in-out;
+  cursor: pointer;
+}
+
+.pack-header {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 1px solid #3d3d3d;
+  background: transparent;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.pack-header h3 {
+  background: #A7CFDF;
+  background: linear-gradient(to right, #A7CFDF 0%, #23538A 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+}
+
+.pack-header h2 {
+  text-align: left;
+  margin: 20px 0px;
+  font-size: 2.5rem;
+}
+
+.lot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lot-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lot-container p {
+  color: rgb(185, 185, 185);
+  width: 90%;
+  padding: 10px;
+  font-size: .9rem;
+  text-align: left;
+}
+
+.lot-line {
+  height: 2px;
+  width: 10%;
+  background-color: rgb(116, 116, 116);
+}
+
+.title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: var(--color-variant)
+}
+
+.price-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--secondary-color);
+}
+
+.price-container span:first-child {
+  margin-top: 10px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.price-container span:last-child {
+  align-self: flex-end;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+}
+
+.list span {
+  border-radius: 50%;
+  border: 1px solid rgba(169, 169, 169, 0.24);
+  background-color: rgba(169,
+      169,
+      169,
+      0.24);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list span svg {
+  height: 12px;
+  width: 12px;
+  color: var(--color-variant);
+}
+
+.list p {
+  display: block;
+  font-family: sans-serif;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  padding: 0;
+  color: white;
+}
+
+.buttons-container button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  color: #ffffff;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 400;
+  font-family: 'Poppins';
+  background-color: #23538A;
+  white-space: nowrap;
+}
+
+.buttons-container button:hover {
+  background-color: #2c66aa;
+  color: white;
+  transition: .1s ease-in-out all;
+  cursor: pointer;
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+/* From Uiverse.io by satyamchaudharydev */
+.plan-card-btn {
+  padding: 16px 32px;
+  background: #23538A;
+  white-space: nowrap;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.plan-card-btn p {
+  margin: 0;
+  font-size: inherit;
+  color: white;
+}
+
+.plan-card-btn:hover {
+  background: #2c66aa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 83, 138, 0.4);
+}
+
+.plan-card-btn svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+@media (max-width: 990px) and (min-width: 768px) {
+  .plan-section {
+    background-repeat: no-repeat;
+  }
+
+  .pack-container {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .my-plan-container {
+    width: 100%;
+    padding: 40px 0px;
+  }
+
+  .pack-container {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .plan-section {
+    background-repeat: no-repeat;
+  }
+}

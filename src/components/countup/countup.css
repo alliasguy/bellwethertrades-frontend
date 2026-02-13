@@ -1,0 +1,11 @@
+.count-cont{
+    align-self: right;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+}
+.countup-num{
+    color: white;
+    font-family: 'poppins';
+    font-weight: 500;
+}

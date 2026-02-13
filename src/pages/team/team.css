@@ -1,0 +1,34 @@
+.team-card{
+    width: 30%;
+    margin: 10px 0px;
+}
+.team-card-container{
+    flex-wrap: wrap;
+}
+.rate-icon-container{
+    pad: 0px;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+}
+.rate-icon-container small{
+    color: #939393;
+    width: 100%;
+    text-transform: capitalize;
+}
+.team-header{
+    margin-top: 50px;
+}
+@media screen and (max-width: 990px){
+    .team-card-container{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .team-card{
+        width: 100%;
+        margin: 15px 0px;
+    }
+    .team-header {
+        margin-top: 30px;
+    }
+}

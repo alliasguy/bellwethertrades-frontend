@@ -1,0 +1,115 @@
+.withdrawal-review-container {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0px;
+}
+
+.left-withdrawal-review-card {
+    width: 30%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid rgb(237, 237, 255);
+}
+
+.right-withdrawal-review-card {
+    width: 65%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 30px;
+    align-self: flex-start;
+    border: 2px solid rgb(237, 237, 255);
+    text-align: left;
+}
+
+.review-left-card-tab {
+    margin: 5px 0px;
+    border: 1.5px solid rgb(240, 240, 240);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-left-card-tab p {
+    width: 80%;
+    text-align: left;
+}
+
+.left-withdrawal-review-card {
+    padding: 20px 10px;
+}
+
+.review-withdraw-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.right-withdrawal-review-card p {
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.review-withdraw-form label {
+    margin-right: auto;
+    color: rgb(125, 125, 125);
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    font-size: .9rem;
+}
+
+.review-withdraw-form input:focus {
+    border: 1.5px solid rgb(210, 214, 255);
+}
+
+.review-withdraw-form input {
+    height: 45px;
+    width: 80%;
+    border: 1.5px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 20px;
+    margin: 10px auto 20px 0px;
+}
+
+.confirm-withdraw-btn {
+    background-color: var(--secondary-color);
+    transition: .2s all ease-in-out;
+    color: white;
+    cursor: pointer;
+}
+
+.confirm-withdraw-btn:hover {
+    background-color: rgb(65, 80, 252);
+    color: white;
+}
+
+
+
+@media (max-width: 990px) and (min-width: 768px) {
+    .my-slide {
+        width: 100% !important;
+    }
+
+    
+}
+
+@media screen and (max-width: 767px) {
+
+    .my-slide {
+        width: 100% !important;
+    }
+  
+}

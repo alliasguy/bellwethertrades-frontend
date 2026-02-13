@@ -1,0 +1,663 @@
+
+.page-swiper-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-left: auto;
+    background-color: white;
+}
+.updated-crypto-container{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    border-radius: 20px;
+}
+.updated-crypto-container h1{
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+.crypto-select{
+    width: 60%;
+    border: 1px solid var(--dark);
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+.updated-crypto-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px 0px;
+    background-color: white;
+    border-radius: 10px;
+}
+.updated-crypto-card p{
+    color: var(--dark);
+    text-align: left;
+    width: 70%;
+}
+.updated-crypto-card p strong{
+    color: rgb(27, 27, 27);
+}
+.updated-btn{
+    margin-top: 15px;
+    background-color: var(--dark) !important;
+    color: white !important;
+}
+.updated-crypto-img{
+    width: 70%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.updated-img-cont{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+}
+.page-header{
+    padding: 30px 0px;
+}
+.page-header h3 {
+    font-family: lato;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+.page-header h2 {
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--dark) ;
+}
+
+.page-header p {
+    font-size: .8rem;
+    color: rgb(72, 72, 72) ;
+}
+.swiper-button-next{
+    margin-right: 0px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgb(211, 224, 234);
+    margin-top: 30px;
+}
+.swiper-button-next::after{
+    font-size: 1.1rem;
+    z-index: 200;
+
+}
+.swiper-button-prev{
+    margin-right: 0px;
+    margin-top: 30px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgb(211, 224, 234);
+}
+.swiper-button-prev::after{
+    font-size: 1.1rem;
+}
+.swiper-container{
+    width: 85%;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+}
+.swiper-slide{
+    padding: 40px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px rgb(207, 207, 207);
+}
+.swiper-slide img{
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.crypto-card-img-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.crypto-card-img-container h2{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: montserrat;
+    color: rgb(71, 125, 160);
+    margin-top: 10px;
+}
+.investrange-container{
+    width: 60%;
+    border-top: 1px solid rgba(208, 208, 208, 0.929);
+    margin-top: 40px;
+}
+.investrange-card{
+    width: 100%;
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.investrange-card p{
+    color: rgb(83, 94, 134);
+    text-transform: capitalize;
+    font-size: .9rem;
+}
+.mySwiper{
+    padding: 10px;
+}
+.deposit-btn{
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px 30px;
+    width: 70%;
+    background-color: rgb(237, 241, 255);
+    text-transform: capitalize;
+    color: rgb(61, 32, 165);
+    font-family: poppins;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.deposit-btn:hover{
+    background-color: rgb(226, 232, 255);
+}
+.history-btn{
+    padding: 12px 37px;
+    background-color:var(--dark);
+    color: var(--mild-color);
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    font-family: lato;
+    width: fit-content;
+}
+.history-btn svg{
+    margin-left: 8px;
+    font-size: 1.2rem;
+    transition: .3s ease-in-out;
+}
+.history-btn:hover{
+    background-color:rgb(64, 89, 229) ;
+}
+.history-btn:hover svg{
+    margin-left: 10px;
+}
+.invest-card p{
+    font-size: .8rem;
+}
+.investcard-cont{
+    width: 70%;
+}
+.modal-container{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: rgba(70, 70, 97, 0.824);
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+}
+.modal{
+    width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 10px 10px;
+    position: relative;
+}
+.modal .close-modal-btn{
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    color: rgb(89, 89, 89);
+    top: 20px;
+    transition: .2s ease-in-out all;
+    cursor: pointer;
+}
+.modal .close-modal-btn:hover{
+    color: black;
+}
+.modal-input-container{
+    width: 100%;
+    padding: 50px 10px;
+    border-top: 1.5px solid rgba(192, 207, 231, 0.45);
+    border-bottom: 1.5px solid rgba(164, 180, 205, 0.45);
+}
+.modal-btn-container{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+}
+.noselect {
+    width: 120px;
+    height: 42px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+    margin-right: 15px;
+    text-transform: uppercase;
+    font-family: montserrat;
+    font-weight: 400;
+    letter-spacing: 3px;
+   }
+   
+   .noselect, .noselect span {
+    transition: 200ms;
+   }
+   
+   .noselect .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   .noselect .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .noselect svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   .noselect:hover {
+    background: #ff3636;
+   }
+   
+   .noselect:hover .text {
+    color: transparent;
+   }
+   
+   .noselect:hover .icon {
+    width: 120px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   .noselect:focus {
+    outline: none;
+   }
+   
+   .noselect:active .icon svg {
+    transform: scale(0.8);
+   }
+.next {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 3px;
+    height: 3em;
+    padding: 0 3em;
+    border: none;
+    background-color: rgb(19, 219, 119);
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 130px;
+   }
+   
+   .next::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    background: greenyellow;
+    background: linear-gradient(90deg, rgb(19, 219, 119) 20%, rgb(5, 114, 56) 100%);
+    transition: 0.2s;
+   }
+   
+   .next .label {
+    position: relative;
+   }
+   
+   .next .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 3em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s;
+   }
+   
+   .next:hover::before {
+    height: 100%;
+   }
+   
+   .next:hover .icon {
+    top: 0;
+    opacity: 1;
+   }
+.modal-input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.modal-input input{
+    border: 1.5px solid rgba(164, 180, 205, 0.45);
+    height: 45px;
+    width: 90%;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 5px 0px 0px 5px;
+}
+.modal-input input:focus{
+    border:  1.5px solid rgba(118, 160, 228, 0.45);
+}
+.modal-input input::placeholder{
+    color: rgb(184, 184, 184);
+    font-size: 1.2rem;
+}
+.modal-input span{
+    width: 10%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: lato;
+    color: var(--secondary-color);
+    background-color: rgba(164, 180, 205, 0.45);
+}
+.modal-header{
+    padding: 10px;
+    width: 100%;
+}
+.modal-header h2{
+    font-family: montserrat;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgb(21, 62, 151) ;
+    font-size: 1.2rem;
+    text-align: left;
+}
+.modal-header p{
+    text-align: left;
+    margin-top: 5px;
+    font-size: .85rem;
+    color:rgb(21, 62, 151);
+    text-transform: capitalize;
+    font-family: lato;
+}
+.checkout-page{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px;
+    background-color: rgb(241, 244, 249);
+}
+.checkout-page p{
+    margin-top: 15px;
+    font-size: .85rem;
+    text-transform: capitalize;
+    color: rgb(116, 116, 116);
+}
+.checkout-info-container{
+    background-color: white;
+    border-radius: 10px;
+    margin: 50px 0px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.checkout-info-container img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+.info-pallets{
+    width: 100%;
+    box-shadow:  0px 0px 3px #ddd;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+.uiverse {
+    position: relative;
+    background: #377cbd;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: lato;
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .uiverse:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .uiverse svg:hover span,
+  .uiverse svg:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uiverse:hover,
+  .uiverse:hover .tooltip,
+  .uiverse:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
+    color: #ffffff;
+  }
+
+  .dashboard-plan-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.dashboard-plan-card-header h3{
+    font-weight: 600;
+    color: var(--dark);
+}
+.plan-card-headerdiv{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.small-plan-head p{
+    font-size: .85rem;
+    text-transform: capitalize;
+    color: rgb(82, 82, 82);
+}
+.transaction-container{
+    width: 85%;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ddd;
+    padding: 10px;
+    border-radius: 20px;
+}
+.transaction-container table{
+    width: 100%;
+    font-family: poppins;
+}
+.transaction-container table td{
+    text-align: left;
+    color: rgb(129, 129, 129);
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding: 10px 0px;
+}
+.transaction-container table tbody td{
+    font-size: .85rem;
+}
+.transaction-container table thead td{
+    color: black;
+    text-transform: capitalize;   
+}
+.transaction-container table thead td {
+    margin-bottom: 20px;
+    padding: 20px 0px;
+}
+.page-swiper-wrapper {
+    padding-bottom: 100px;
+}
+@media (max-width: 990px) and (min-width: 768px){
+    .my-slide{
+        width: 100% !important;
+    }
+    .swiper-container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px){
+    .my-slide{
+        width: 100% !important;
+    }
+    .swiper-container{
+        width: 100%;
+    }
+    .page-swiper-wrapper{
+        padding-bottom: 50px;
+    }
+        .crypto-select {
+            width: 100%;
+            border: 1px solid var(--dark);
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0px;
+        }
+    
+        .updated-crypto-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 0px;
+            background-color: white;
+            border-radius: 10px;
+        }
+    
+        .updated-crypto-card p {
+            color: var(--dark);
+            text-align: left;
+            width: 80%;
+        }
+    
+        .updated-crypto-card p strong {
+            color: rgb(27, 27, 27);
+        }
+    
+        .updated-btn {
+            width: 80%;
+            margin-top: 20px;
+        }
+    
+        .updated-crypto-img {
+            width: 90%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+    
+        .updated-img-cont {
+            width: 90%;
+        }
+}
