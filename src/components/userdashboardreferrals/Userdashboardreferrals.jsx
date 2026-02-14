@@ -69,7 +69,7 @@ const Userdashboardreferrals = ({ route }) => {
               <input
                 type="text"
                 readOnly
-                value={userData ? `signalsynch.com/user/${userData.username || userData.referral}` : 'Loading...'}
+                value={userData ? `www.bellwethertrade.org/user/${userData.username || userData.referral}` : 'Loading...'}
                 ref={clipRef}
               />
               <button className={`copy-btn ${clipBoard ? 'success' : ''}`} onClick={copy}>
