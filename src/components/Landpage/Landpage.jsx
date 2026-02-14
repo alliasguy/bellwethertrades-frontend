@@ -39,12 +39,12 @@ const Landpage = () => {
         >
           <h1 className='hero-headline'>
             Experience Raw Spread Trading with a<br />
-            <span className='hero-highlight-text'>Regulated Forex & CFD Broker</span>
+            <span className='hero-highlight-text'>Smart Mirror Trading Platform</span>
           </h1>
 
           <p className='hero-subheadline'>
-            Trade Indices, Shares, Commodities, and Crypto with<br />
-            lightning-fast execution and deep liquidity across global markets.
+            Copy expert traders automatically. Mirror their<br />
+            strategies with precision and ease across global markets.
           </p>
 
           <div className='hero-actions'>
