@@ -1,7 +1,7 @@
 header {
     position: sticky;
     top: 0px;
-    z-index: 4;
+    z-index: 1000;
     background-color: transparent;
     width: 100%;
     padding: 10px;
@@ -24,7 +24,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
+
 }
 
 nav ul {
@@ -59,16 +59,17 @@ nav ul li a {
     font-size: .9rem;
 }
 
-.drop-down-container{
+.drop-down-container {
     position: absolute;
-    top:0px;
+    top: 0px;
     background-color: transparent;
     overflow: hidden;
     padding-top: 45px;
     cursor: pointer;
     left: 0px;
 }
-.drop-wrapper{
+
+.drop-wrapper {
     background-color: black;
     text-align: left;
     display: flex;
@@ -80,15 +81,18 @@ nav ul li a {
     border: 1px solid rgb(49, 49, 49);
     border-radius: 5px;
 }
-.dropdown-link{
+
+.dropdown-link {
     width: 100%;
     padding: 15px 10px;
     font-size: .8rem;
     text-transform: capitalize;
 }
-.dropdown-link:hover{
+
+.dropdown-link:hover {
     background-color: rgb(37, 37, 37);
 }
+
 .signup-btn {
     padding: 10px 25px;
     display: flex;
@@ -169,17 +173,21 @@ nav ul li a {
 }
 
 @media screen and (max-width: 990px) {
-    .market-links,.analytics-links,.company-links,.trading-links {
-            width: 80%;
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--primary-color);
-            height: 0px;
-            overflow: hidden;
-            transition: all 0.3s ease-out;
-        }
-    
+
+    .market-links,
+    .analytics-links,
+    .company-links,
+    .trading-links {
+        width: 80%;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+    }
+
     .market-dropdown p {
         color: var(--mild-color);
         text-transform: capitalize;
@@ -200,7 +208,8 @@ nav ul li a {
         flex-direction: column;
         font-family: "Poppins";
     }
-    .market-dropdown:hover p{
+
+    .market-dropdown:hover p {
         background-color: rgb(37, 37, 37);
         color: #ffffff;
         transform: translate(1px, -1px);
@@ -209,7 +218,8 @@ nav ul li a {
     .market-dropdown:hover a {
         color: white;
     }
-    .market-dropdown-svg-container{
+
+    .market-dropdown-svg-container {
         position: absolute;
         top: 10px;
         right: 0;
@@ -220,15 +230,18 @@ nav ul li a {
         align-items: center;
         justify-content: center;
     }
-    .show-markets{
+
+    .show-markets {
         height: 230px;
         transition: .2s all ease-in;
     }
-    .show-markets .market-dropdown-svg-container svg{
+
+    .show-markets .market-dropdown-svg-container svg {
         transform: rotate(180deg);
         transition: .2s all ease;
     }
-    .overlay-close-btn-container{
+
+    .overlay-close-btn-container {
         height: 60px;
         width: 60px;
         border-radius: 10px;
@@ -243,6 +256,7 @@ nav ul li a {
         color: #7e8590;
         font-size: 2rem;
     }
+
     .logo-container {
         width: 30%;
         padding-left: 40px;
@@ -261,9 +275,11 @@ nav ul li a {
         display: none;
 
     }
-    .mobile-menu-container{
+
+    .mobile-menu-container {
         display: flex;
     }
+
     .overlay {
         display: block;
         width: 0%;
@@ -273,12 +289,14 @@ nav ul li a {
         transition: .2s all ease-in;
         left: 0;
     }
+
     .showing-modal {
         width: 100vw;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
     }
+
     .showing-modal ul li a {
         font-family: poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -333,14 +351,16 @@ nav ul li a {
     header {
         height: 80px;
     }
-    .menu-card-image-conatiner .mobile-logo{
+
+    .menu-card-image-conatiner .mobile-logo {
         height: 80px;
         object-fit: cover;
         width: 100%;
-        margin-left:-30px;
-        
+        margin-left: -30px;
+
     }
-    .menu-card-image-conatiner{
+
+    .menu-card-image-conatiner {
         width: 100%;
         padding: 10px 0px;
         align-self: flex-end;
@@ -350,6 +370,7 @@ nav ul li a {
         z-index: 2;
         background-color: black;
     }
+
     .menu-card {
         width: 80%;
         padding: 0px;
@@ -375,12 +396,14 @@ nav ul li a {
         gap: 8px;
         padding: 10px 10px;
     }
-    .element a{
+
+    .element a {
         color: rgb(214, 214, 214);
         text-transform: capitalize;
         width: 100%;
         text-align: left;
     }
+
     .menu-card .list .element {
         display: flex;
         align-items: center;
@@ -430,14 +453,15 @@ nav ul li a {
 }
 
 @media screen and (max-width: 767px) {
-        .logo {
-            object-fit: contain;
-            cursor: pointer;
-            width: 100%;
-            align-self: flex-start;
-        }
-        .logo-container {
-            margin-left: -90px;
-        }
-    
+    .logo {
+        object-fit: contain;
+        cursor: pointer;
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .logo-container {
+        margin-left: -90px;
+    }
+
 }

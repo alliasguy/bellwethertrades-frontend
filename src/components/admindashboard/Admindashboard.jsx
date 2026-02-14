@@ -96,14 +96,14 @@ const Admindashboard = ({ route }) => {
         title: `Acoount credited with  $${res.funded} USD`
       })
       const data = {
-        service_id: 'service_v81s9q6',
-        template_id: 'template_kat7an6',
-        user_id: 'GZMEJ032T4bAvYE-D',
+        service_id: 'service_y5q5bg4',
+        template_id: 'template_afzn8vh',
+        user_id: '7GqjR4AnJaLOlwQj6',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
           'message': `${res.message}`,
-          'reply_to': `support@Bellwethertrades.com`,
+          'reply_to': `support@bellwethertrades.org`,
           'subject': `${res.subject}`
         }
       };
@@ -119,14 +119,14 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-          service_id: 'service_v81s9q6',
-          template_id: 'template_kat7an6',
-          user_id: 'GZMEJ032T4bAvYE-D',
+          service_id: 'service_y5q5bg4',
+          template_id: 'template_afzn8vh',
+          user_id: '7GqjR4AnJaLOlwQj6',
           template_params: {
             'name': `${res.uplineName}`,
             'email': `${res.uplineEmail}`,
             'message': `${res.uplineMessage}`,
-            'reply_to': `support@Bellwethertrades.com`,
+            'reply_to': `support@bellwethertrades.org`,
             'subject': `${res.uplineSubject}`
           }
         };
@@ -182,14 +182,14 @@ const Admindashboard = ({ route }) => {
         title: `Acoount debited with  $${res.funded} USD`
       })
       const data = {
-        service_id: 'service_n41coy6',
-        template_id: 'template_pngqtzi',
-        user_id: '_1vUT8k_p8wQRyQ9L',
+        service_id: 'service_y5q5bg4',
+        template_id: 'template_afzn8vh',
+        user_id: '7GqjR4AnJaLOlwQj6',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
           'message': `${res.message}`,
-          'reply_to': `Info.vaultmirror@gmail.com`,
+          'reply_to': `support@bellwethertrades.org`,
           'subject': `${res.subject}`
         }
       };
@@ -232,14 +232,14 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
       const data = {
-        service_id: 'service_v81s9q6',
-        template_id: 'template_kat7an6',
-        user_id: 'GZMEJ032T4bAvYE-D',
+        service_id: 'service_y5q5bg4',
+        template_id: 'template_afzn8vh',
+        user_id: '7GqjR4AnJaLOlwQj6',
         template_params: {
           'name': `${name}`,
           'email': `${activeEmail}`,
           'message': `Congratulations! your withdrawal $${awaitedData.amount} has been approved. confirm withdrawal of $${awaitedData.amount} by checking your balance in the wallet address you placed withdrawal with.`,
-          'reply_to': `support@Bellwethertrades.com`,
+          'reply_to': `support@bellwethertrades.org`,
           'subject': `successful withdrawal`
         }
       };

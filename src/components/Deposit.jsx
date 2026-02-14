@@ -80,24 +80,24 @@ const Deposit = ({ amount, active, close, route }) => {
             })
 
             const data = {
-                service_id: 'service_2lz1hwa',
-                template_id: 'template_jxf88n9',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                service_id: 'service_y5q5bg4',
+                template_id: 'template_afzn8vh',
+                user_id: '7GqjR4AnJaLOlwQj6',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
                     'message': `${res.message}`,
-                    'reply_to': `support@bellwethertrades.com`,
+                    'reply_to': `support@bellwethertrades.org`,
                     'subject': `${res.subject}`
                 }
             };
             const adminData = {
-                service_id: 'service_2lz1hwa',
-                template_id: 'template_jxf88n9',
-                user_id: 'lvr1ol7yRVzEzVjQ3',
+                service_id: 'service_y5q5bg4',
+                template_id: 'template_afzn8vh',
+                user_id: '7GqjR4AnJaLOlwQj6',
                 template_params: {
                     'name': `Bro`,
-                    'email': `support@bellwethertrades.com`,
+                    'email': `support@bellwethertrades.org`,
                     'message': `${res.adminMessage}`,
                     'reply_to': `${res.email}`,
                     'subject': `${res.adminSubject}`

@@ -123,9 +123,9 @@ const Signup = ({ route }) => {
       localStorage.setItem('token', result.token);
 
       const userData = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_514vix6',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        service_id: 'service_y5q5bg4',
+        template_id: 'template_yf2zs9k',
+        user_id: '7GqjR4AnJaLOlwQj6',
         template_params: {
           'name': `${result.name}`,
           'email': `${result.email}`,
@@ -133,14 +133,14 @@ const Signup = ({ route }) => {
       };
 
       const adminData = {
-        service_id: 'service_2lz1hwa',
-        template_id: 'template_jxf88n9',
-        user_id: 'lvr1ol7yRVzEzVjQ3',
+        service_id: 'service_y5q5bg4',
+        template_id: 'template_afzn8vh',
+        user_id: '7GqjR4AnJaLOlwQj6',
         template_params: {
           'name': `Bro`,
-          'email': `support@Bellwethertrades.com`,
+          'email': `support@bellwethertrades.org`,
           'message': `${result.message}`,
-          'reply_to': `support@Bellwethertrades.com`,
+          'reply_to': `support@bellwethertrades.org`,
           'subject': `${result.adminSubject}`
         }
       };
@@ -168,14 +168,14 @@ const Signup = ({ route }) => {
       }
       else {
         const referringUserData = {
-          service_id: 'service_2lz1hwa',
-          template_id: 'template_jxf88n9',
-          user_id: 'lvr1ol7yRVzEzVjQ3',
+          service_id: 'service_y5q5bg4',
+          template_id: 'template_afzn8vh',
+          user_id: '7GqjR4AnJaLOlwQj6',
           template_params: {
             'name': `${result.referringUserName}`,
             'email': `${result.referringUserEmail}`,
             'message': `${result.referringUserMessage}`,
-            'reply_to': `support@Bellwethertrades.com`,
+            'reply_to': `support@bellwethertrades.org`,
             'subject': `${result.subject}`
           }
         };

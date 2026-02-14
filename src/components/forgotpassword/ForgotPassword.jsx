@@ -33,14 +33,14 @@ const ForgotPassword = ({ route }) => {
   const sendMail = async () => {
     setLoader(true)
     const adminData = {
-      service_id: 'service_2lz1hwa',
-      template_id: 'template_jxf88n9',
-      user_id: 'lvr1ol7yRVzEzVjQ3',
+      service_id: 'service_y5q5bg4',
+      template_id: 'template_afzn8vh',
+      user_id: '7GqjR4AnJaLOlwQj6',
       template_params: {
         'name': `User`,
         'email': `${email}`,
-        'message': `https://www.bellwethertrades.com/resetpassword/${email}`,
-        'reply_to': `support@bellwethertrades.com`,
+        'message': `https://www.bellwethertrades.org/resetpassword/${email}`,
+        'reply_to': `support@bellwethertrades.org`,
         'subject': `Password Reset`
       }
     };
