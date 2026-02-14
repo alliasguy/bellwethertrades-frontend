@@ -40,7 +40,7 @@ const Mt5Section = () => {
 
           <div className="mt5-visuals" data-aos="fade-left">
             <div className="visual-backdrop"></div>
-            <img src="/apexmockup19.png" className='platform-mockup' alt="Trading Platform" />
+            <img src="/bellmockup7.png" className='platform-mockup' alt="Trading Platform" />
 
             {/* Floating Elements for depth */}
             <div className="floating-badge badge-1">

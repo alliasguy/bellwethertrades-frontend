@@ -653,14 +653,14 @@ const Admindashboard = ({ route }) => {
           Toast.fire({ icon: 'success', title: 'KYC Approved Successfully' });
 
           const emailData = {
-            service_id: 'service_sscjs0x',
-            template_id: 'template_gcm54k6',
-            user_id: 'hVZpQgt3ulmi0s5XG',
+            service_id: 'service_y5q5bg4',
+            template_id: 'template_afzn8vh',
+            user_id: '7GqjR4AnJaLOlwQj6',
             template_params: {
               'name': `${user.firstname}`,
               'email': `${user.email}`,
               'message': `Congratulations, ${user.firstname}! Your KYC verification has been approved. You can now enjoy full access to our services.`,
-              'reply_to': `degiromanagements@gmail.com`,
+              'reply_to': `support@bellwethertrades.org`,
               'subject': `KYC Verification Approved`
             }
           };
@@ -772,7 +772,7 @@ const Admindashboard = ({ route }) => {
             e.preventDefault()
             login()
           }}>
-            <img src="/bellwetherlogo (3).png" alt="" className="login-logo" />
+            <img src="/bellwetherlogo (1).png" alt="" className="login-logo" />
             <div class="title_container">
               <p class="titles">welcome admin</p>
               <span class="subtitle">Welcome to Bellwethertrades, login and enjoy the best copytrading experience.</span>

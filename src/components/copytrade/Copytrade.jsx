@@ -33,7 +33,7 @@ const Copytrade = () => {
 
         <div className="copy-trade-image-wrapper" data-aos="fade-up">
           <div className="visual-glow"></div>
-          <img src="/apexmockup9.png" alt="AtlasMarkets Copy Trading" className="copy-mockup" />
+          <img src="/bellmockup1.png" alt="AtlasMarkets Copy Trading" className="copy-mockup" />
           <div className="float-stat-card">
             <span className="stat-label">Avg. Return</span>
             <span className="stat-value">+12.5%</span>
