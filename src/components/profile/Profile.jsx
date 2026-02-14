@@ -2,192 +2,283 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './profile.css';
 import Userdashboardheader from '../userdashboardheader/Userdashboardheader';
-import { BsImage } from 'react-icons/bs';
-import { RxUpload } from 'react-icons/rx';
-import Swal from 'sweetalert2';
+import { BsEye, BsEyeSlash } from 'react-icons/bs';
+import { FaUserAlt, FaAngleDown, FaCamera, FaLock } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
-import { FaUserAlt, FaAngleDown } from "react-icons/fa";
+import Swal from 'sweetalert2';
+import Loader from '../Loader';
 import MobileDropdown from '../MobileDropdown';
 
 const Profile = ({ route }) => {
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [country, setCountry] = useState('');
-  const [zipCode, setZipCode] = useState('');
-  const [state, setState] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
   const [userData, setUserData] = useState(null);
-  const [showImage, setShowImage] = useState();
-  const [showMobileDropdown,setShowMobileDropdown] = useState(false)
+  const [loader, setLoader] = useState(false);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  // Password form state
+  const [passwordData, setPasswordData] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  });
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const navigate = useNavigate();
-  
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer);
-      toast.addEventListener('mouseleave', Swal.resumeTimer);
-    }
-  });
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      const getData = async () => {
-        const req = await fetch(`${route}/api/getData`, {
-          headers: { 'x-access-token': localStorage.getItem('token') }
-        });
-        const res = await req.json();
-        setUserData(res);
-        setFirstname(res.firstname);
-        setLastname(res.lastname);
-        setCountry(res.country);
-        setZipCode(res.zipcode);
-        setState(res.state);
-        setPhone(res.phonenumber);
-        setAddress(res.address);
-      };
-      getData();
-    } else {
-      navigate('/login');
-    }
-  }, [route, navigate]);
+    const getData = async () => {
+      try {
+        setLoader(true);
+        const token = localStorage.getItem('token');
+        if (!token) {
+          navigate('/login');
+          return;
+        }
 
-  const uploadProof = async (file) => {
+        const response = await fetch(`${route}/api/getData`, {
+          headers: {
+            'x-access-token': token,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const data = await response.json();
+        if (data.status === 'error') {
+          localStorage.removeItem('token');
+          navigate('/login');
+        } else {
+          setUserData(data);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        navigate('/login');
+      } finally {
+        setLoader(false);
+      }
+    };
+    getData();
+  }, [navigate, route]);
+
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordData({ ...passwordData, [name]: value });
+  };
+
+  const uploadProfilePicture = async (file) => {
+    setUploadingImage(true);
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'upload');
-    
-    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload', {
-      method: 'POST',
-      body: formData,
-    });
-    const res = await req.json();
-    if (res) {
-      setShowImage(res.secure_url);
+
+    try {
+      const response = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+
+      if (data.secure_url) {
+        const token = localStorage.getItem('token');
+        const updateResponse = await fetch(`${route}/api/updateUserData`, {
+          method: 'POST',
+          headers: {
+            'x-access-token': token,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ profilepicture: data.secure_url }),
+        });
+
+        const updateData = await updateResponse.json();
+        if (updateData.status === 200) {
+          setUserData({ ...userData, profilepicture: data.secure_url });
+          Swal.fire('Success', 'Profile picture updated successfully', 'success');
+        } else {
+          Swal.fire('Error', 'Failed to update profile picture', 'error');
+        }
+      }
+    } catch (error) {
+      Swal.fire('Error', 'Failed to upload image', 'error');
+    } finally {
+      setUploadingImage(false);
     }
   };
 
-  const updateUserData = async () => {
-    const req = await fetch(`${route}/api/updateUserData`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      },
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        country,
-        state,
-        phonenumber: phone,
-        zipcode: zipCode,
-        profilepicture: showImage,
-        address
-      })
-    });
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        Swal.fire('Error', 'Image size should be less than 5MB', 'error');
+        return;
+      }
+      uploadProfilePicture(file);
+    }
+  };
 
-    const res = await req.json();
-    if (res.status === 200) {
-      Toast.fire({ icon: 'success', title: `Profile successfully updated` });
-    } else if (res.status === 400) {
-      Toast.fire({ icon: 'warning', title: `No changes were made` });
-    } else {
-      Toast.fire({ icon: 'error', title: `Internal server error` });
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    if (passwordData.newPassword !== passwordData.confirmPassword) {
+      Swal.fire('Error', 'New passwords do not match', 'error');
+      return;
+    }
+    if (passwordData.newPassword.length < 6) {
+      Swal.fire('Error', 'Password must be at least 6 characters long', 'error');
+      return;
+    }
+
+    setLoader(true);
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${route}/api/updateUserData`, {
+        method: 'POST',
+        headers: {
+          'x-access-token': token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password: passwordData.newPassword }),
+      });
+
+      const data = await response.json();
+      if (data.status === 200) {
+        Swal.fire('Success', 'Password updated successfully', 'success');
+        setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
+      } else {
+        Swal.fire('Error', data.message || 'Failed to update password', 'error');
+      }
+    } catch (error) {
+      Swal.fire('Error', 'An error occurred while updating password', 'error');
+    } finally {
+      setLoader(false);
     }
   };
 
   const closeMobileMenu = () => {
-    setShowMobileDropdown(false)
-  }
+    setShowMobileDropdown(false);
+  };
 
   return (
     <div className='homewrapper'>
       <Userdashboardheader route={route} />
-      <section className='dashboardhomepage'>
+      <section className='dashboardhomepage settings-page'>
+        {loader && <Loader />}
+
         <div className="dashboardheaderwrapper">
-          <div className="dashboardheaderwrapper">
-            <div className="header-notification-icon-container">
-                <IoMdNotifications />
+          <div className="header-notification-icon-container">
+            <IoMdNotifications />
+          </div>
+          <div className="header-username-container">
+            <h3>Hi, {userData ? userData.firstname : ''}</h3>
+          </div>
+          <div className="header-userprofile-container">
+            <div className="user-p-icon-container">
+              <FaUserAlt />
             </div>
-            <div className="header-username-container">
-              <h3>Hi, {userData ? userData.firstname : ''}</h3>
-            </div>
-            <div className="header-userprofile-container">
-              <div className="user-p-icon-container">
-                <FaUserAlt/>
-              </div>
-              <div className="user-p-drop-icon" onClick={() => { setShowMobileDropdown(!showMobileDropdown); }
-                }>
-                  <FaAngleDown />
-                </div>
-                
+            <div className="user-p-drop-icon" onClick={() => setShowMobileDropdown(!showMobileDropdown)}>
+              <FaAngleDown />
             </div>
           </div>
         </div>
-      
-        <div className="profile-page">
+
+        <div className="settings-container-minimal">
           <MobileDropdown showStatus={showMobileDropdown} route={route} closeMenu={closeMobileMenu} />
-        <div className="page-header">
-          <h2>Profile Settings</h2>
-          <p>Choose an investment plan to start earning immediately</p>
-        </div>
-        <div className="profile-form-container">
-          <form className="profile-form" onSubmit={(e) => { e.preventDefault(); updateUserData(); }}>
-            <div className="upper-chamber">
-              <div className="profile-picture-upload-container">
-                <div className="profile-circle">
-                  {showImage ? <img src={showImage} alt="" className='profile-circle-img' /> : <BsImage />}
-                </div>
-                <label htmlFor="file-input" className='upload-icon'>
-                  <RxUpload />
-                  <input type="file" accept=".jpg, .png, .svg, .webp, .jpeg" id="file-input" className='proof-input' required onChange={(e) => uploadProof(e.target.files[0])} />
-                </label>
+
+          <div className="settings-header-minimal" data-aos="fade-up">
+            <h2>Account Settings</h2>
+            <p>Manage your professional identity and security settings</p>
+          </div>
+
+          <div className="settings-content-grid">
+            {/* Profile Picture Card */}
+            <div className="settings-card-minimal profile-card" data-aos="fade-up" data-aos-delay="100">
+              <div className="card-header-minimal">
+                <h3>Profile Identity</h3>
               </div>
-              <div className="first-input-container">
-                <div className="profile-input-container">
-                  <label htmlFor="firstname">First Name</label>
-                  <input type="text" id="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+              <div className="profile-upload-minimal">
+                <div className="profile-preview-wrapper">
+                  {userData?.profilepicture ? (
+                    <img src={userData.profilepicture} alt="Profile" />
+                  ) : (
+                    <div className="profile-initials">
+                      {userData?.firstname?.charAt(0)}
+                    </div>
+                  )}
+                  <label htmlFor="p-upload" className="camera-btn">
+                    <FaCamera />
+                    <input type="file" id="p-upload" accept="image/*" onChange={handleFileChange} disabled={uploadingImage} />
+                  </label>
                 </div>
-                <div className="profile-input-container">
-                  <label htmlFor="lastname">Last Name</label>
-                  <input type="text" id="lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
-                </div>
-                <div className="profile-input-container">
-                  <label htmlFor="email">Email</label>
-                  <input type="text" id="email" value={userData ? userData.email : ''} readOnly />
-                </div>
-                <div className="profile-input-container">
-                  <label htmlFor="phone">Phone Number</label>
-                  <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <div className="profile-data-minimal">
+                  <h4>{userData?.firstname} {userData?.lastname}</h4>
+                  <p>{userData?.email}</p>
+                  <span className="account-badge">Verified Account</span>
                 </div>
               </div>
             </div>
-            <div className="lower-chamber">
-              <div className="profile-input-container">
-                <label htmlFor="country">Country</label>
-                <input type="text" id="country" value={country} onChange={(e) => setCountry(e.target.value)} />
+
+            {/* Password Management Card */}
+            <div className="settings-card-minimal security-card" data-aos="fade-up" data-aos-delay="200">
+              <div className="card-header-minimal">
+                <h3><FaLock /> Security & Password</h3>
               </div>
-              <div className="profile-input-container">
-                <label htmlFor="address">Address</label>
-                <input type="text" id="address" value={address} onChange={(e) => setAddress(e.target.value)} />
-              </div>
-              <div className="profile-input-container">
-                <label htmlFor="state">State</label>
-                <input type="text" id="state" value={state} onChange={(e) => setState(e.target.value)} />
-              </div>
-              <div className="profile-input-container">
-                <label htmlFor="zipCode">Zip Code</label>
-                <input type="text" id="zipCode" value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
-              </div>
+              <form className="minimal-form" onSubmit={handlePasswordSubmit}>
+                <div className="form-item-minimal">
+                  <label>Current Password</label>
+                  <div className="input-wrapper-minimal">
+                    <input
+                      type={showCurrentPassword ? "text" : "password"}
+                      name="currentPassword"
+                      value={passwordData.currentPassword}
+                      onChange={handlePasswordChange}
+                      placeholder="••••••••"
+                      required
+                    />
+                    <button type="button" className="toggle-eye" onClick={() => setShowCurrentPassword(!showCurrentPassword)}>
+                      {showCurrentPassword ? <BsEye /> : <BsEyeSlash />}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="form-item-minimal">
+                  <label>New Password</label>
+                  <div className="input-wrapper-minimal">
+                    <input
+                      type={showNewPassword ? "text" : "password"}
+                      name="newPassword"
+                      value={passwordData.newPassword}
+                      onChange={handlePasswordChange}
+                      placeholder="Min. 6 characters"
+                      required
+                    />
+                    <button type="button" className="toggle-eye" onClick={() => setShowNewPassword(!showNewPassword)}>
+                      {showNewPassword ? <BsEye /> : <BsEyeSlash />}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="form-item-minimal">
+                  <label>Confirm New Password</label>
+                  <div className="input-wrapper-minimal">
+                    <input
+                      type={showConfirmPassword ? "text" : "password"}
+                      name="confirmPassword"
+                      value={passwordData.confirmPassword}
+                      onChange={handlePasswordChange}
+                      placeholder="Repeat new password"
+                      required
+                    />
+                    <button type="button" className="toggle-eye" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                      {showConfirmPassword ? <BsEye /> : <BsEyeSlash />}
+                    </button>
+                  </div>
+                </div>
+
+                <button type="submit" className="submit-btn-minimal">
+                  Update Password
+                </button>
+              </form>
             </div>
-            <input type="submit" value="Update" className='update-profile-btn' />
-          </form>
-        </div>
+          </div>
         </div>
       </section>
     </div>

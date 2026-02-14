@@ -1,52 +1,446 @@
-.kyc-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f7f7f7;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    font-family: Arial, sans-serif;
+.kyc-page {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.kyc-form h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+/* Status Banner */
+.kyc-status-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin: 20px 0;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-icon {
+    font-size: 2.5rem;
+}
+
+.status-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.status-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.status-not-submitted {
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
+    border-left: 5px solid #25acd0;
+}
+
+.status-processing {
+    background: linear-gradient(135deg, #1e96b8 0%, #38bdf8 100%);
+    border-left: 5px solid #38bdf8;
+}
+
+.status-approved {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border-left: 5px solid #4CAF50;
+}
+
+.status-rejected {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    border-left: 5px solid #666666;
+}
+
+/* KYC Form Container */
+.kyc-form-container {
+    background: var(--secondary-mild);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.kyc-form-header {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.kyc-form label {
+.kyc-form-header h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.kyc-form-header p {
+    color: var(--mild-color);
+    font-size: 1rem;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--dark-mild);
+    color: var(--mild-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(37, 172, 208, 0.4);
+}
+
+.progress-step.completed .step-number {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+}
+
+.step-label {
+    color: var(--mild-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.progress-step.active .step-label {
+    color: white;
+}
+
+.progress-line {
+    width: 100px;
+    height: 3px;
+    background: var(--dark-mild);
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.progress-line.completed {
+    background: linear-gradient(90deg, #1e96b8 0%, #25acd0 100%);
+}
+
+/* Form Steps */
+.form-step {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-step h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--dark-mild);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--mild-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--dark-mild);
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #25acd0;
+    box-shadow: 0 0 0 3px rgba(37, 172, 208, 0.1);
+}
+
+.form-group input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-group select option {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Document Upload Section */
+.document-upload-section {
+    margin-top: 40px;
+}
+
+.document-upload-section h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.upload-item {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed var(--dark-mild);
+    transition: all 0.3s ease;
+}
+
+.upload-item:hover {
+    border-color: #25acd0;
+    transform: translateY(-2px);
+}
+
+.upload-item label {
     display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #444;
+    color: var(--mild-color);
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
-.kyc-form input[type="text"],
-.kyc-form input[type="email"],
-.kyc-form input[type="file"] {
+.upload-item input[type="file"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    border: 1px solid var(--dark-mild);
+    border-radius: 6px;
+    background: var(--secondary-mild);
+    color: var(--mild-color);
+    font-size: 0.9rem;
+    cursor: pointer;
 }
 
-.kyc-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
+.upload-item input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
     color: white;
     border: none;
+    padding: 8px 16px;
     border-radius: 6px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    font-weight: 500;
 }
 
-.kyc-form button:hover {
-    background-color: #0056b3;
+.upload-item input[type="file"]::file-selector-button:hover {
+    opacity: 0.9;
+}
+
+.upload-success {
+    color: #25acd0;
+    font-weight: 600;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.upload-item small {
+    display: block;
+    color: var(--mild-color);
+    font-size: 0.8rem;
+    margin-top: 8px;
+    opacity: 0.7;
+}
+
+/* Form Navigation */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid var(--dark-mild);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-submit {
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 140px;
+}
+
+.btn-primary,
+.btn-submit {
+    background: linear-gradient(135deg, #1e96b8 0%, #25acd0 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(37, 172, 208, 0.3);
+}
+
+.btn-primary:hover,
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 172, 208, 0.4);
+}
+
+.btn-secondary {
+    background: var(--dark-mild);
+    color: var(--mild-color);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-mild);
+    color: white;
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Disabled Message */
+.kyc-disabled-message {
+    background: var(--secondary-mild);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.kyc-disabled-message p {
+    color: var(--mild-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .kyc-form-container {
+        padding: 25px;
+    }
+
+    .form-grid,
+    .upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-indicator {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .progress-line {
+        width: 3px;
+        height: 40px;
+        margin: 0;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-submit {
+        width: 100%;
+    }
+
+    .kyc-status-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .status-icon {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .kyc-form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-step h3 {
+        font-size: 1.2rem;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
 }
