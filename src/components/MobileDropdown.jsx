@@ -5,7 +5,7 @@ import { GiReceiveMoney } from 'react-icons/gi'
 import { RxDashboard } from 'react-icons/rx'
 import { FaRegChartBar } from 'react-icons/fa'
 import { GrLineChart } from "react-icons/gr";
-import { FiAward } from "react-icons/fi";
+import { FiAward,FiUsers } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
 import { RiLuggageDepositLine } from 'react-icons/ri'
 import { AiOutlineSetting, AiOutlineStock } from 'react-icons/ai'
