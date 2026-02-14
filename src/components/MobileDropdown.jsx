@@ -108,6 +108,12 @@ const MobileDropdown = ({ route, showStatus, closeMenu }) => {
                         }}>
                             <FiAward />
                             <p>Ranking</p>
+                            </div>
+                            <div className="dropdown-tabs" onClick={() => {
+                            navigate('/referrals')
+                        }}>
+                            <FiUsers />
+                            <p>Referrals</p>
                         </div>
                         <div className="dropdown-tabs" onClick={() => {
                             navigate('/withdraw')

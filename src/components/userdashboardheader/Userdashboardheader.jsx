@@ -89,6 +89,12 @@ const Userdashboardheader = ({route}) => {
                           <FiAward />
                       </div>
                       <Link to='/ranking'>ranking</Link>
+                  </li>
+                  <li className="dashboard-links">
+                        <div className="dashboard-svg-container">
+                            <FiUsers />
+                        </div>
+                        <Link to='/referrals'>referrals</Link>
                     </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
