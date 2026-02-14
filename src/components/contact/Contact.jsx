@@ -18,7 +18,7 @@ const Contact = () => {
                 </p>
 
                 <div className="contact-actions">
-                    <a href='mailto:support@bellwethertrades.com' className="contact-btn">
+                    <a href='mailto:support@bellwethertrades.org' className="contact-btn">
                         <FiMail /> Email Support
                     </a>
                 </div>

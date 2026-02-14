@@ -11,7 +11,7 @@ const Copytrade = () => {
             <span className="subtitle-pill">Smart Investing</span>
             <h2>Automated <br /><span className="highlight-text">Wealth Creation</span></h2>
             <p>
-              Why trade alone when you can partner with the best? AtlasMarkets allows you to automatically mirror the positions of verified top-performing traders.
+              Why trade alone when you can partner with the best? Bellwethertrades allows you to automatically mirror the positions of verified top-performing traders.
             </p>
           </div>
 
